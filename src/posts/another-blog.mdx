@@ -1,0 +1,24 @@
+---
+date: 2021-08-12
+title: Another blog
+description: Watch OUT!
+---
+
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
+
+export const query = graphql`
+  query CocktailQuery2 {
+    file(name: { eq: "cocktail" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: DOMINANT_COLOR)
+      }
+    }
+  }
+`;
+
+# Hello!
+
+<GatsbyImage image={getImage(props.data.file)} alt="moi" />
+
+Another blog site
